@@ -1,0 +1,10 @@
+com\leniolabs\challenge\model\Account.class
+com\leniolabs\challenge\service\AccountServiceImpl.class
+com\leniolabs\challenge\ChallengeApplication.class
+com\leniolabs\challenge\calculator\CorporateAccountFeeCalculator.class
+com\leniolabs\challenge\calculator\FeeCalculatorIF.class
+com\leniolabs\challenge\controller\AccountController.class
+com\leniolabs\challenge\calculator\factory\FeeCalculatorFactory.class
+com\leniolabs\challenge\custom\AccountType.class
+com\leniolabs\challenge\calculator\PersonalAccountFeeCalculator.class
+com\leniolabs\challenge\service\AccounServiceIF.class
