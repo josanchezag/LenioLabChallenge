@@ -4,7 +4,7 @@ import com.leniolabs.challenge.custom.AccountType;
 import org.springframework.stereotype.Component;
 
 @AccountType(value = "personal")
-@Component
+@Component("personal")
 public class PersonalAccountFeeCalculator implements FeeCalculatorIF{
 
     @Override

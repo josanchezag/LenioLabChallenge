@@ -31,8 +31,8 @@ public class AccountController {
 
     @GetMapping(value = "/calculate-fee/{id}")
     public ResponseEntity<Double> calculateFee(@PathVariable String id) throws Exception {
-        //TODO: complete with the logic
-
-        return null; //TODO FIXME
+        Account account=this.accountControllerService.findById(id)
+                .orElseThrow(() -> new Exception("The Id doesn't find it - " ));
+        return ResponseEntity.ok(this.feeCalculatorFactory.calculateFee(account.getAccountType()));
     }
 }
