@@ -3,7 +3,6 @@ package com.leniolabs.challenge.controller;
 import com.leniolabs.challenge.calculator.factory.FeeCalculatorFactory;
 import com.leniolabs.challenge.model.Account;
 import com.leniolabs.challenge.repository.IAccountRepository;
-import com.leniolabs.challenge.service.AccounServiceIF;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,9 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
 
     @Autowired
-    private AccounServiceIF accountControllerService;
-
-    @Autowired
     private IAccountRepository accountRepository;
 
     @Autowired
@@ -29,6 +25,7 @@ public class AccountController {
 
     @PostMapping(value = "/create")
     public ResponseEntity<Account> createAccount(@RequestBody Account account) {
+
         return ResponseEntity.ok(this.accountRepository.save(account));
     }
 

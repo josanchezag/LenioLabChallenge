@@ -1,5 +1,4 @@
 com\leniolabs\challenge\model\Account.class
-com\leniolabs\challenge\service\AccountServiceImpl.class
 com\leniolabs\challenge\service\security\JWTAuthenticationFilter.class
 com\leniolabs\challenge\service\security\JWTAuthorizationFilter.class
 com\leniolabs\challenge\service\security\WebSecurityConfig.class
@@ -12,11 +11,11 @@ com\leniolabs\challenge\util\Encrypt.class
 com\leniolabs\challenge\model\Userg.class
 com\leniolabs\challenge\service\security\AuthCredentials.class
 com\leniolabs\challenge\repository\IUserRepository.class
+com\leniolabs\challenge\repository\IAccountRepository.class
 com\leniolabs\challenge\service\UserDetailServiceImpl.class
 com\leniolabs\challenge\ChallengeApplication.class
 com\leniolabs\challenge\constants\AccountType.class
 com\leniolabs\challenge\custom\AccountType.class
 com\leniolabs\challenge\calculator\PersonalAccountFeeCalculator.class
 com\leniolabs\challenge\model\Role.class
-com\leniolabs\challenge\service\AccounServiceIF.class
 com\leniolabs\challenge\service\UserDetailsImpl.class
