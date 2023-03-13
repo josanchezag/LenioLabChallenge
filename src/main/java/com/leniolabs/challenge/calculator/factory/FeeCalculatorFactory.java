@@ -2,6 +2,7 @@ package com.leniolabs.challenge.calculator.factory;
 
 
 import com.leniolabs.challenge.calculator.FeeCalculatorIF;
+import com.leniolabs.challenge.constants.AccountType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -16,10 +17,10 @@ public class FeeCalculatorFactory {
     FeeCalculatorIF personalAccountFeeCalculator;
 
     public Double calculateFee(String accountType) throws Exception {
-        if (accountType.trim().equals("COR"))
+        if (accountType.trim().equals(AccountType.CORPORATE.getId()))
         {
             return this.corporateAccountFeeCalculator.calculateFee();
-        } else if (accountType.trim().equals("PER")) {
+        } else if (accountType.trim().equals(AccountType.PERSONAL.getId())) {
             return this.personalAccountFeeCalculator.calculateFee();
         }
         else {
