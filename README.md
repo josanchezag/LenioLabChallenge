@@ -13,3 +13,7 @@ The solution you have to provide must be developed and built inside the above me
 ## Mocking tests are not required!
 
 But you can include them
+
+## Deploy application
+
+To deploy the application is mandatory create a Mysql DB call it LenioLabs user josanchezag and pass J051IOOI_
