@@ -3,6 +3,7 @@ package com.leniolabs.challenge.controller;
 import com.leniolabs.challenge.calculator.factory.FeeCalculatorFactory;
 import com.leniolabs.challenge.model.Account;
 import com.leniolabs.challenge.repository.IAccountRepository;
+import com.leniolabs.challenge.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
 
     @Autowired
-    private IAccountRepository accountRepository;
+    private IAccountService accountService;
 
     @Autowired
     private FeeCalculatorFactory feeCalculatorFactory;
@@ -26,12 +27,12 @@ public class AccountController {
     @PostMapping(value = "/create")
     public ResponseEntity<Account> createAccount(@RequestBody Account account) {
 
-        return ResponseEntity.ok(this.accountRepository.save(account));
+        return ResponseEntity.ok(this.accountService.save(account));
     }
 
     @GetMapping(value = "/calculate-fee/{id}")
     public ResponseEntity<Double> calculateFee(@PathVariable String id) throws Exception {
-        Account account=this.accountRepository.findById(id)
+        Account account=this.accountService.findById(id)
                 .orElseThrow(() -> new Exception("The Id doesn't find it - " ));
         return ResponseEntity.ok(this.feeCalculatorFactory.calculateFee(account.getAccountType()));
     }
